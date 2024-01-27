@@ -11,4 +11,13 @@
     <attr name="primaryShadeColor" format="color" />
     <attr name="dialogShadeColor" format="color" />
     <attr name="primaryShadeDarkColor" format="color" />
+    <attr name="appFont" format="string" />
+
+    <declare-styleable name="customAttributes">
+        <attr name="appTextStyle" format="integer">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+        </attr>
+    </declare-styleable>
 </resources>

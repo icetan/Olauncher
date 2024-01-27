@@ -46,7 +46,14 @@ class MainActivity : AppCompatActivity() {
         prefs = Prefs(this)
         if (isEinkDisplay()) prefs.appTheme = AppCompatDelegate.MODE_NIGHT_NO
         AppCompatDelegate.setDefaultNightMode(prefs.appTheme)
+
         super.onCreate(savedInstanceState)
+
+        val fontOverlayId = getResources().getIdentifier(prefs.textStyle, "style",
+            packageName
+        );
+        theme.applyStyle(fontOverlayId, true)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

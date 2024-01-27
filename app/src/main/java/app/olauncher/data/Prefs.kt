@@ -37,6 +37,7 @@ class Prefs(context: Context) {
     private val SHARE_SHOWN_TIME = "SHARE_SHOWN_TIME"
     private val SWIPE_DOWN_ACTION = "SWIPE_DOWN_ACTION"
     private val TEXT_SIZE_SCALE = "TEXT_SIZE_SCALE"
+    private val TEXT_STYLE = "TEXT_STYLE"
     private val HIDE_DIGITAL_WELLBEING = "HIDE_DIGITAL_WELLBEING"
 
     private val APP_NAME_1 = "APP_NAME_1"
@@ -168,6 +169,10 @@ class Prefs(context: Context) {
     var textSizeScale: Float
         get() = prefs.getFloat(TEXT_SIZE_SCALE, 1.0f)
         set(value) = prefs.edit().putFloat(TEXT_SIZE_SCALE, value).apply()
+
+    var textStyle: String
+        get() = prefs.getString(TEXT_STYLE, Constants.TextStyle.LIGHT).toString()
+        set(value) = prefs.edit().putString(TEXT_STYLE, value).apply()
 
     var hideDigitalWellbeing: Boolean
         get() = prefs.getBoolean(HIDE_DIGITAL_WELLBEING, false)

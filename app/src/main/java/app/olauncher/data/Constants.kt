@@ -52,6 +52,13 @@ object Constants {
         const val SEVEN = 1.3f
     }
 
+    object TextStyle {
+        const val LIGHT = "ThemeOverlayTextAppearance.Light"
+        const val MEDIUM = "ThemeOverlayTextAppearance.Medium"
+        const val CONDENSED = "ThemeOverlayTextAppearance.Condensed"
+        const val SERIF = "ThemeOverlayTextAppearance.Serif"
+    }
+
     const val WALL_TYPE_LIGHT = "light"
     const val WALL_TYPE_DARK = "dark"
 

@@ -43,6 +43,28 @@
         <item name="primaryShadeDarkColor">@color/blackInverseTrans25</item>
         <item name="dialogShadeColor">@color/blackInverseTrans50</item>
 
+        <item name="appFont">sans-serif-light</item>
+        <item name="appTextStyle">normal</item>
+    </style>
+
+    <style name="ThemeOverlayTextAppearance.Light" parent="">
+        <item name="appFont">sans-serif-light</item>
+        <item name="appTextStyle">normal</item>
+    </style>
+
+    <style name="ThemeOverlayTextAppearance.Medium" parent="">
+        <item name="appFont">sans-serif-medium</item>
+        <item name="appTextStyle">normal</item>
+    </style>
+
+    <style name="ThemeOverlayTextAppearance.Condensed" parent="">
+        <item name="appFont">sans-serif-condensed</item>
+        <item name="appTextStyle">normal</item>
+    </style>
+
+    <style name="ThemeOverlayTextAppearance.Serif" parent="">
+        <item name="appFont">serif</item>
+        <item name="appTextStyle">normal</item>
     </style>
 
     <style name="WindowAnimationTransition">
@@ -56,9 +78,21 @@
         <item name="android:textColor">?attr/primaryColor</item>
         <item name="android:editTextColor">?attr/primaryColor</item>
         <item name="android:textColorHint">?attr/primaryColor</item>
-        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:inputType">textCapSentences|textNoSuggestions</item>
         <item name="android:cursorVisible">false</item>
+        <item name="android:fontFamily">?attr/appFont</item>
+        <item name="android:textStyle">?attr/appTextStyle</item>
+    </style>
+
+    <style name="AppText" parent="TextDefault">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:fontFamily">?attr/appFont</item>
+        <item name="android:textStyle">?attr/appTextStyle</item>
+    </style>
+
+    <style name="DateTimeText" parent="TextDefault">
+        <item name="android:fontFamily">?attr/appFont</item>
+        <item name="android:textStyle">?attr/appTextStyle</item>
     </style>
 
     <style name="TextDefault" parent="@android:style/TextAppearance.Large">
@@ -71,7 +105,6 @@
     </style>
 
     <style name="TextLarge" parent="TextDefault">
-        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">@dimen/text_large</item>
     </style>
 

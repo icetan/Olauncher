@@ -28,17 +28,16 @@
 
         <TextClock
             android:id="@+id/clock"
-            style="@style/TextDefault"
+            style="@style/DateTimeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
             android:format12Hour="h:mm"
             android:textSize="@dimen/time_size"
             tools:text="02:34" />
 
         <TextView
             android:id="@+id/date"
-            style="@style/TextDefault"
+            style="@style/DateTimeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:format12Hour="EEE, dd MMM"
@@ -61,7 +60,7 @@
 
         <TextView
             android:id="@+id/homeApp1"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -72,7 +71,7 @@
 
         <TextView
             android:id="@+id/homeApp2"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -83,7 +82,7 @@
 
         <TextView
             android:id="@+id/homeApp3"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -94,7 +93,7 @@
 
         <TextView
             android:id="@+id/homeApp4"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -105,7 +104,7 @@
 
         <TextView
             android:id="@+id/homeApp5"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -116,7 +115,7 @@
 
         <TextView
             android:id="@+id/homeApp6"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -127,7 +126,7 @@
 
         <TextView
             android:id="@+id/homeApp7"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"
@@ -138,7 +137,7 @@
 
         <TextView
             android:id="@+id/homeApp8"
-            style="@style/TextLarge"
+            style="@style/AppText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/app"

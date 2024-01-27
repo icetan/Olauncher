@@ -74,6 +74,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         populateWallpaperText()
         populateAppThemeText()
         populateTextSize()
+        populateTextStyle()
         populateAlignment()
         populateStatusBar()
         populateDateTime()
@@ -90,6 +91,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.appThemeSelectLayout.visibility = View.GONE
         binding.swipeDownSelectLayout.visibility = View.GONE
         binding.textSizesLayout.visibility = View.GONE
+        binding.textStyleLayout.visibility = View.GONE
         if (view.id != R.id.alignmentBottom)
             binding.alignmentSelectLayout.visibility = View.GONE
 
@@ -118,6 +120,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             R.id.themeDark -> updateTheme(AppCompatDelegate.MODE_NIGHT_YES)
             R.id.themeSystem -> updateTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             R.id.textSizeValue -> binding.textSizesLayout.visibility = View.VISIBLE
+            R.id.textStyleValue -> binding.textStyleLayout.visibility = View.VISIBLE
             R.id.actionAccessibility -> openAccessibilityService()
             R.id.closeAccessibility -> toggleAccessibilityVisibility(false)
             R.id.notWorking -> requireContext().openUrl(Constants.URL_DOUBLE_TAP)
@@ -141,6 +144,11 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             R.id.textSize5 -> updateTextSizeScale(Constants.TextSize.FIVE)
             R.id.textSize6 -> updateTextSizeScale(Constants.TextSize.SIX)
             R.id.textSize7 -> updateTextSizeScale(Constants.TextSize.SEVEN)
+
+            R.id.textStyleLight -> updateTextStyle(Constants.TextStyle.LIGHT)
+            R.id.textStyleMedium -> updateTextStyle(Constants.TextStyle.MEDIUM)
+            R.id.textStyleCondensed -> updateTextStyle(Constants.TextStyle.CONDENSED)
+            R.id.textStyleSerif -> updateTextStyle(Constants.TextStyle.SERIF)
 
             R.id.swipeLeftApp -> showAppListIfEnabled(Constants.FLAG_SET_SWIPE_LEFT_APP)
             R.id.swipeRightApp -> showAppListIfEnabled(Constants.FLAG_SET_SWIPE_RIGHT_APP)
@@ -224,6 +232,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.themeDark.setOnClickListener(this)
         binding.themeSystem.setOnClickListener(this)
         binding.textSizeValue.setOnClickListener(this)
+        binding.textStyleValue.setOnClickListener(this)
         binding.actionAccessibility.setOnClickListener(this)
         binding.closeAccessibility.setOnClickListener(this)
         binding.notWorking.setOnClickListener(this)
@@ -252,6 +261,11 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.textSize5.setOnClickListener(this)
         binding.textSize6.setOnClickListener(this)
         binding.textSize7.setOnClickListener(this)
+
+        binding.textStyleLight.setOnClickListener(this)
+        binding.textStyleMedium.setOnClickListener(this)
+        binding.textStyleCondensed.setOnClickListener(this)
+        binding.textStyleSerif.setOnClickListener(this)
 
         binding.digitalWellbeing.setOnLongClickListener(this)
         binding.dailyWallpaper.setOnLongClickListener(this)
@@ -464,6 +478,12 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         requireActivity().recreate()
     }
 
+    private fun updateTextStyle(style: String) {
+        if (prefs.textStyle == style) return
+        prefs.textStyle = style
+        requireActivity().recreate()
+    }
+
     private fun toggleKeyboardText() {
         if (prefs.autoShowKeyboard && prefs.keyboardMessageShown.not()) {
             viewModel.showDialog.postValue(Constants.Dialog.KEYBOARD)
@@ -519,6 +539,16 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             Constants.TextSize.FIVE -> 5
             Constants.TextSize.SIX -> 6
             Constants.TextSize.SEVEN -> 7
+            else -> "--"
+        }.toString()
+    }
+
+    private fun populateTextStyle() {
+        binding.textStyleValue.text = when (prefs.textStyle) {
+            Constants.TextStyle.LIGHT -> getString(R.string.style_light)
+            Constants.TextStyle.MEDIUM -> getString(R.string.style_medium)
+            Constants.TextStyle.CONDENSED -> getString(R.string.style_condensed)
+            Constants.TextStyle.SERIF -> getString(R.string.style_serif)
             else -> "--"
         }.toString()
     }
